@@ -123,7 +123,7 @@ app.delete("/remove/:id", requireLogin, async (req, res) => {
 if(process.env.Node_ENV == 'production'){
 
     app.get('/',(req,res)=>{
-      app.use(express.static(__dirname,'client','build'))
+      app.use(express.static(path.resolve(__dirname,'client','build')))
       res.sendFile(path.resolve(__dirname,'client','build','index.html'))
     })
 
